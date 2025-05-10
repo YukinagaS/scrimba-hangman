@@ -1,0 +1,19 @@
+.container {
+  padding: 2rem 6rem;
+  text-align: center;
+}
+
+.container > h2 {
+  color: #8E8E8E;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.box-letter {
+  background-color: #353332;
+}
+
+.box-letter > .letter {
+  height: 100%;
+  width: 100%;
+}

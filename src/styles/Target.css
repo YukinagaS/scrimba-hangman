@@ -1,0 +1,21 @@
+.container-target {
+  padding: 2rem 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.box-letter {
+  background-color: #353332;
+  padding: 1rem;
+  margin: 0 .3rem;
+  border-bottom-style: solid;
+  border-color: #C0C0C0;
+}
+
+.letter {
+  visibility: hidden;
+}
+
+.letter.visible {
+  visibility: visible;
+}
