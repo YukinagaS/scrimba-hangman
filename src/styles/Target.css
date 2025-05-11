@@ -6,6 +6,7 @@
 
 .box-letter {
   background-color: #353332;
+  width: 3rem;
   padding: 1rem;
   margin: 0 .3rem;
   border-bottom-style: solid;

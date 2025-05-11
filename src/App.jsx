@@ -36,7 +36,7 @@ function App() {
   return (
     <main>
       <Header />
-      <Target word={targetWord} />
+      <Target word={targetWord} guesses={guesses} />
       <Keyboard
         keyLetters={keyLetters}
         buttonClasses={buttonClasses}
