@@ -23,7 +23,7 @@ function App() {
   const [guesses, setGuesses] = useState([]);
 
   // Calculate wrong guesses
-  const wrongGuessCount = guesses.filter(letter => !targetWord.split('').includes(letter)).length
+  const wrongGuessCount = guesses.filter(letter => !targetWord.includes(letter)).length
   console.log(wrongGuessCount);
 
 
