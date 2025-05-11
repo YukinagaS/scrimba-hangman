@@ -3,10 +3,6 @@
   padding: 1rem;
   border-radius: 0.8rem;
   display: grid;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
   grid-template: repeat(3, 3rem) / repeat(20, 1rem);
   gap: .5rem;
 }
@@ -14,7 +10,7 @@
 .btn-key {
   background-color: #FCBA29;
   color: #161515;
-  border: none;
+  border: 1px solid #303030;
   border-radius: 0.3rem;
   font-family: 'Hanken Grotesk', Arial, sans-serif;;
   font-size: 1.1rem;
@@ -23,7 +19,7 @@
   cursor: pointer;
 }
 
-.btn-hide {
+.hide {
   grid-column: span 1;
   visibility: hidden;
 }

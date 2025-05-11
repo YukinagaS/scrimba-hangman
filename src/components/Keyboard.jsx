@@ -1,15 +1,17 @@
 import { nanoid } from 'nanoid';
+import { clsx } from 'clsx';
 import '../styles/Keyboard.css';
-import keyLetters from '../data/ENG_keyboard';
 
-export default function Keyboard() {
-  const keyComponents = keyLetters.map(letter => {
-    if (letter === "hide") {
-      return <button className="btn-key btn-hide" key={nanoid()}></button>
-    } else {
-      return <button className="btn-key" key={nanoid()}>{letter}</button>
-    }
-  });
+export default function Keyboard(props) {
+  const keyComponents = props.keyLetters.map(letter =>
+    <button
+      className={clsx(props.buttonClasses[letter])}
+      key={nanoid()}
+      onClick={() => props.clickKey(letter)}
+    >
+      {letter}
+    </button>
+  );
 
   return (
     <div className="container-keyboard">

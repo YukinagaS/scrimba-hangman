@@ -3,17 +3,46 @@ import './styles/App.css';
 import Header from './components/Header';
 import Target from './components/Target';
 import Keyboard from './components/Keyboard';
+import keyLetters from './data/ENG_keyboard';
 import wordList from './data/wordlist';
 
 function App() {
-  const [targetWord, setTargetWord] = useState(wordList[Math.floor(Math.random() * wordList.length)]);
+  // Construct class dictionary for buttonClasses state
+  const classDict = new Object();
+  keyLetters.forEach(letter => {
+    if (letter === "hide") {
+      classDict[letter] = {"btn-key": true, "grn": false, "red": false, "hide": true}
+    } else {
+      classDict[letter] = {"btn-key": true, "grn": false, "red": false, "hide": false}
+    }
+  });
+
+  // Set state for puzzle word, for keyboard button classes, and letter guesses
+  const [targetWord, setTargetWord] = useState(wordList[Math.floor(Math.random() * wordList.length)].toUpperCase());
+  const [buttonClasses, setButtonClasses] =useState(classDict);
+  const [guesses, setGuesses] = useState([]);
+
+  function clickKey(letter) {
+    setGuesses(prev => prev.includes(letter) ? prev : [...prev, letter]);
+    setButtonClasses(prev => {
+      return {...prev, [letter]: {
+        ...prev[letter],
+        grn: targetWord.includes(letter) ? true : false,
+        red: targetWord.includes(letter) ? false : true
+      }}
+    });
+  }
 
   return (
-    <>
+    <main>
       <Header />
       <Target word={targetWord} />
-      <Keyboard />
-    </>
+      <Keyboard
+        keyLetters={keyLetters}
+        buttonClasses={buttonClasses}
+        clickKey={clickKey}
+      />
+    </main>
   )
 }
 
