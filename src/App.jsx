@@ -22,6 +22,11 @@ function App() {
   const [buttonClasses, setButtonClasses] =useState(classDict);
   const [guesses, setGuesses] = useState([]);
 
+  // Calculate wrong guesses
+  const wrongGuessCount = guesses.filter(letter => !targetWord.split('').includes(letter)).length
+  console.log(wrongGuessCount);
+
+
   function clickKey(letter) {
     setGuesses(prev => prev.includes(letter) ? prev : [...prev, letter]);
     setButtonClasses(prev => {
