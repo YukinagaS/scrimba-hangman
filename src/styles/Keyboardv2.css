@@ -1,0 +1,29 @@
+.container-keyboard-2 {
+  background-color: #353332;
+  padding: .8rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.key-row {
+  margin: 2px 0;
+  display: flex;
+  gap: 2px;
+}
+
+.btn-key {
+  background-color: #FCBA29;
+  color: #161515;
+  border: 1px solid #303030;
+  border-radius: 0.3rem;
+  height: 2rem;
+  width: 2rem;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;;
+  font-size: 1.1rem;
+  font-weight: 600;
+  grid-column: span 2;
+  cursor: pointer;
+}

@@ -3,6 +3,7 @@ import './styles/App.css';
 import Header from './components/Header';
 import Target from './components/Target';
 import Keyboard from './components/Keyboard';
+import Keyboardv2 from './components/Keyboardv2';
 import keyLetters from './data/ENG_keyboard';
 import wordList from './data/wordlist';
 
@@ -42,7 +43,7 @@ function App() {
     <main>
       <Header />
       <Target word={targetWord} guesses={guesses} />
-      <Keyboard
+      <Keyboardv2
         keyLetters={keyLetters}
         buttonClasses={buttonClasses}
         clickKey={clickKey}

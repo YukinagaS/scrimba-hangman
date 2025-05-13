@@ -9,6 +9,6 @@ body {
   color: #F9F4DA;
   padding: 20px;
   height: 100vh;
-  display: flex;
+  display: block;
   justify-content: center;
 }
